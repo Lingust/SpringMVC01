@@ -25,6 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     用户名:${username } <br>
-     密码:${password }
+     密码:${password }<br>
+     <c:out value="${username }"></c:out><br>
+     <c:out value="JSTL测试"></c:out>
   </body>
 </html>
