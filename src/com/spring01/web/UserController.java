@@ -10,7 +10,7 @@ public class UserController {
 	
 	@RequestMapping(value="login",method=RequestMethod.POST)
 	public ModelAndView login(String username, String passwd){
-		if(this.checkParams(new String[]{username, passwd})){
+		if(this.checkParams(username, passwd)){
 			ModelAndView mv = new ModelAndView("success");
 			mv.addObject("username", username);
 			mv.addObject("password", passwd);
@@ -19,12 +19,9 @@ public class UserController {
 		return new ModelAndView("home");
 	}
 	
-	private boolean checkParams(String[] args){
-		for(String param:args){
-			if(param=="" || param==null || param.isEmpty()){
-				return false;
-			}
-		}
-		return true;
+	private boolean checkParams(String username,String passwd){
+		if(username.equals("³ÂÐ¡·å") && passwd.equals("1234"))
+			return true;
+		return false;
 	}
 }
